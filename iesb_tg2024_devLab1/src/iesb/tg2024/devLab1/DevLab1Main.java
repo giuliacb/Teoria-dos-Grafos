@@ -32,9 +32,14 @@ public class DevLab1Main {
 		//lab1.gerarPrimeiraMatriz(5,5,0,1,true);
 		
 		//exemplo 2
+		//ManipulaMatrizAdj manipulaMatrizAdj = new ManipulaMatrizAdj();
+		//int [][] matriz = manipulaMatrizAdj.gerarPrimeiraMatriz(5, 5, 0, 1, true);
+		//manipulaMatrizAdj.printMatrizAdj(matriz);
+		
+		//meu exemplo
 		ManipulaMatrizAdj manipulaMatrizAdj = new ManipulaMatrizAdj();
-		int [][] matriz = manipulaMatrizAdj.gerarPrimeiraMatriz(5, 5, 0, 1, true);
-		manipulaMatrizAdj.printMatrizAdj(matriz);
+        int [][] matriz = manipulaMatrizAdj.gerarMatrizAdjacenciaGrafo();
+        manipulaMatrizAdj.printMatrizAdj(matriz);
 	}
 
 }
