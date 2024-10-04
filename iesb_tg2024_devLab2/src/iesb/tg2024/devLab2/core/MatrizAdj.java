@@ -1,4 +1,4 @@
-package iesb.tg2024.devLab2;
+package iesb.tg2024.devLab2.core;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,22 +28,31 @@ public class MatrizAdj {
         }
 	}
     
+    //PARA GRAFO NÃO DIRECIONADO
+//    public void adicionarAresta(int indiceVerticeInicial, int indiceVerticeFinal) {
+//        Vertice verticeInicial = this.vertices.get(indiceVerticeInicial);
+//        Vertice verticeFinal = this.vertices.get(indiceVerticeFinal);
+//
+//        if (verticeInicial == verticeFinal) {
+//            this.matriz[indiceVerticeInicial][indiceVerticeFinal] = 1;
+//            verticeInicial.addGrau();
+//
+//        } else {
+//            this.matriz[indiceVerticeInicial][indiceVerticeFinal] = 1;
+//            verticeInicial.addGrau();
+//
+//            this.matriz[indiceVerticeFinal][indiceVerticeInicial] = 1;
+//            verticeFinal.addGrau();
+//        }
+//
+//    }
+    
     public void adicionarAresta(int indiceVerticeInicial, int indiceVerticeFinal) {
         Vertice verticeInicial = this.vertices.get(indiceVerticeInicial);
-        Vertice verticeFinal = this.vertices.get(indiceVerticeFinal);
 
-        if (verticeInicial == verticeFinal) {
-            this.matriz[indiceVerticeInicial][indiceVerticeFinal] = 1;
-            verticeInicial.addGrau();
-
-        } else {
-            this.matriz[indiceVerticeInicial][indiceVerticeFinal] = 1;
-            verticeInicial.addGrau();
-
-            this.matriz[indiceVerticeFinal][indiceVerticeInicial] = 1;
-            verticeFinal.addGrau();
-        }
-
+        // Para grafos direcionados, apenas uma direção
+        this.matriz[indiceVerticeInicial][indiceVerticeFinal] = 1;
+        verticeInicial.addGrau();
     }
     
     public List<Vertice> getAdjacencias(int indiceVertice){

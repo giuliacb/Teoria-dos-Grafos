@@ -1,4 +1,4 @@
-package iesb.tg2024.devLab2;
+package iesb.tg2024.devLab2.core;
 
 public class Vertice {
 	

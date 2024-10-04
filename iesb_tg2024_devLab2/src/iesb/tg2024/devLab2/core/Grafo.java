@@ -1,4 +1,4 @@
-package iesb.tg2024.devLab2;
+package iesb.tg2024.devLab2.core;
 
 import java.util.ArrayList;
 import java.util.HashMap;
