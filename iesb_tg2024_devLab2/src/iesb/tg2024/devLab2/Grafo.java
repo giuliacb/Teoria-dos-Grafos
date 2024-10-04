@@ -16,6 +16,11 @@ public class Grafo {
 	
 	private MatrizAdj matrizAdj = null;
 	
+	public MatrizAdj getMatrizAdj() {
+		return this.matrizAdj;
+	}
+	
+	
 	//construtor
 	public Grafo(int qtdMaxVertice) {
 		this.qtdMaxVertice = qtdMaxVertice;
@@ -40,7 +45,7 @@ public class Grafo {
 	
 	public void conectarVertices(String rotuloVerticeInicial, String rotuloVerticeFinal) throws Exception {
 		if(!isExisteVertice(rotuloVerticeInicial) || !isExisteVertice(rotuloVerticeFinal)) {
-			throw new Exception ("Para adicionaruma aresta ambos os vértices devem existir");
+			throw new Exception ("Para adicionar uma aresta ambos os vértices devem existir");
 		}
 		
 		this.criarMatAdj();
@@ -63,5 +68,28 @@ public class Grafo {
 		return isVerticeAusente;
 	}
 	
+	public Vertice getVertice(String rotulo) {
+		this.isExisteVertice(rotulo);
+		int indice = this.rotulosIndices.get(rotulo);
+		return this.vertices.get(indice);
+	}
 	
+	public List<Vertice> getGrafoAdjacencias(String vertice){
+		// preciso fazer a verificacao se o vertice existe
+		int indiceVertice = this.rotulosIndices.get(vertice);
+		
+		return this.matrizAdj.getAdjacencias(indiceVertice);
+	}
+	
+	// @novo
+	public void imprimirMatrizAdjacenciaGrafo() {
+		int lengthMatriz = this.matrizAdj.getMatriz().length;
+		
+		for (int i = 0; i < lengthMatriz; i++) {
+			for (int j = 0; j < lengthMatriz; j++) {
+				System.out.print(this.matrizAdj.getMatriz()[i][j] + " ");
+			}
+			System.out.println();
+		}		
+	}
 }

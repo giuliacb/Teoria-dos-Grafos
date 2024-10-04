@@ -3,6 +3,8 @@ package iesb.tg2024.devLab2;
 public class Vertice {
 	
 	private String rotulo;
+	private int grau = 0;
+	
 	public String getRotulo() {
 		return rotulo;
 	}
@@ -19,16 +21,18 @@ public class Vertice {
 		this.grau = grau;
 	}
 
-	private int grau = 0;
 	
 	//construtor
-	public Vertice(String rotulo) throws Exception{
-		boolean isRotuloEmBranco = rotulo == null || rotulo != null && "".equals(rotulo.trim());
+	public Vertice(String rotulo) throws Exception {
 		
-		if(isRotuloEmBranco) {
-			throw new Exception ("não podemos criar vértice sem rotulo");
+		boolean isRotuloNullOrBranco = rotulo == null || rotulo != null &&
+				"".equals(rotulo.trim());
+		
+		if(isRotuloNullOrBranco) {
+			throw new Exception("Não podemos criar vértices sem rótulo!");
 		}
-		this.rotulo = rotulo;
+		
+		this.rotulo = rotulo;		
 	}
 	
 	public void addGrau() {

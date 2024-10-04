@@ -9,23 +9,35 @@ public class DevLab2Main {
 		Grafo grafo = new Grafo(9);
 		try {
 			grafo.addVertice("DF");
-			grafo.addVertice("CA");
-			grafo.addVertice("CT");
-			grafo.addVertice("UA");
-			grafo.addVertice("UB");
-			grafo.addVertice("CR");
-			grafo.addVertice("RP");
-			grafo.addVertice("SC");
-			grafo.addVertice("LM");
+			grafo.addVertice("LZ");
+			grafo.addVertice("SB");
+			grafo.addVertice("TG");
+			grafo.addVertice("CI");
+			grafo.addVertice("PL");
+			
 			
 			System.out.println(">> G=(V,E) possui os seguintes vértices: \n");
 			for (Vertice vertice : grafo.getVertices()) {
 				System.out.println("vertice" + vertice.getRotulo());
 			}
 			
-			grafo.conectarVertices("DF", "CR");
-			grafo.conectarVertices("CR", "CT");
-			grafo.conectarVertices("CT", "UA");
+			grafo.conectarVertices("DF", "LZ");
+			grafo.conectarVertices("DF", "SB");
+			grafo.conectarVertices("DF", "TG");
+			grafo.conectarVertices("DF", "CI");
+			grafo.conectarVertices("DF", "PL");
+			
+			System.out.println(">> Grau do vértice DF: " + grafo.getVertice("DF").getGrau());
+			// ...
+			
+			System.out.println(">> O vértice DF possui as seguintes adjacências: ");
+			
+			for(Vertice vertice : grafo.getGrafoAdjacencias("DF")) {
+				System.out.println(vertice.getRotulo() + " ");
+			}			
+			
+			// Imprime a Matriz Adjacencia do Grafo
+			grafo.imprimirMatrizAdjacenciaGrafo();	
 			
 			
 			
